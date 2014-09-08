@@ -7,12 +7,13 @@ class recursion {
 
 		start = System.currentTimeMillis();
 		System.out.println("\nOptie 1:");
-		System.out.println(noverk1(6, 3));
-		System.out.println(noverk1(10, 5));
-		System.out.println(noverk1(15, 8));
+		//System.out.println(noverk1(80, 38));
+		//System.out.println(noverk1(6, 3));
+		//System.out.println(noverk1(10, 5));
+		//System.out.println(noverk1(15, 8));
 		for (int i = 0; i < aantalkeer; i++) {
-			noverk1(6, 3);
-			noverk1(10, 5);
+			//noverk1(6, 3);
+			//noverk1(10, 5);
 			noverk1(15, 8);
 		}
 		end = System.currentTimeMillis();
@@ -20,12 +21,13 @@ class recursion {
 
 		start = System.currentTimeMillis();
 		System.out.println("\nOptie 2:");
-		System.out.println(noverk2(6, 3));
-		System.out.println(noverk2(10, 5));
-		System.out.println(noverk2(15, 8));
+		System.out.println(noverk2(80, 38));
+		//System.out.println(noverk2(6, 3));
+		//System.out.println(noverk2(10, 5));
+		//System.out.println(noverk2(15, 8));
 		for (int i = 0; i < aantalkeer; i++) {
-			noverk2(6, 3);
-			noverk2(10, 5);
+			//noverk2(6, 3);
+			//noverk2(10, 5);
 			noverk2(15, 8);
 		}
 		end = System.currentTimeMillis();
@@ -33,12 +35,13 @@ class recursion {
 
 		start = System.currentTimeMillis();
 		System.out.println("\nOptie 3:");
-		System.out.println(noverk3(6, 3));
-		System.out.println(noverk3(10, 5));
-		System.out.println(noverk3(15, 8));
+		System.out.println(noverk3(80, 38));
+		//System.out.println(noverk3(6, 3));
+		//System.out.println(noverk3(10, 5));
+		//System.out.println(noverk3(15, 8));
 		for (int i = 0; i < aantalkeer; i++) {
-			noverk3(6, 3);
-			noverk3(10, 5);
+			//noverk3(6, 3);
+			//noverk3(10, 5);
 			noverk3(15, 8);
 		}
 		end = System.currentTimeMillis();
@@ -46,12 +49,13 @@ class recursion {
 
 		start = System.currentTimeMillis();
 		System.out.println("\nOptie 4:");
-		System.out.println(noverk4(6, 3));
-		System.out.println(noverk4(10, 5));
-		System.out.println(noverk4(15, 8));
+		System.out.println(noverk4(80, 38));
+		//System.out.println(noverk4(6, 3));
+		//System.out.println(noverk4(10, 5));
+		//System.out.println(noverk4(15, 8));
 		for (int i = 0; i < aantalkeer; i++) {
-			noverk4(6, 3);
-			noverk4(10, 5);
+			//noverk4(6, 3);
+			//noverk4(10, 5);
 			noverk4(15, 8);
 		}
 		end = System.currentTimeMillis();
@@ -66,11 +70,14 @@ class recursion {
 		if (n == k || k == 0) {
 			return 1;
 		}
-
+		
 		return (fac(n)) / (fac(k) * fac(n - k));
 	}
 
 	public static long fac(long n) {
+		if (n == 0)
+			System.out.println("fout");
+		
 		if (n == 1)
 			return 1;
 		else
