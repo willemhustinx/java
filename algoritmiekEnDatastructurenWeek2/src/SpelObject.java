@@ -9,7 +9,10 @@ public class SpelObject {
 	}
 	
 	public double getPos(int index) {
-		return position[index];
+		
+		int i = index % this.DIMENSION;
+		
+		return position[i];
 	}
 	
 	public String toString()

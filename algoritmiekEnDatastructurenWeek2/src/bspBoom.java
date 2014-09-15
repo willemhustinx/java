@@ -9,7 +9,7 @@ public class bspBoom {
 
 		System.out.println(boom.toString());
 		
-		boom.sort(0, 7, 1);
+		boom.recQuickSort(0, 7, 0);
 		
 		System.out.println(boom.toString());
 	}
