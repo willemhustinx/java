@@ -21,100 +21,6 @@ public class boom {
 		this.i++;
 	}
 	
-	/*
-	public void sort(int start, int eind, int dim) {
-		int index = this.partition(start, eind, dim);
-		System.out.println("index: " + index);
-
-		if (start < index - 1) {
-			System.out.println("partition left: " + this.toString(start, index - 1));
-			this.partition(start, index - 1, dim + 1);
-		}
-		if (index < eind) {
-			System.out.println("partition right: " + this.toString(index - 1, eind));
-			this.partition(index - 1, eind, dim + 1);
-		}
-
-	}
-	*/
-	
-	/*
-	int partition(int start, int eind, int dim) {
-
-		int mediaanpos = getMediaanPos(start, eind, dim);
-		System.out.println(mediaanpos);
-		System.out.println(this.boompje[mediaanpos].toString());
-		
-		double mediaan = this.boompje[mediaanpos].getPos(dim);
-		System.out.println("mediaan: " + this.boompje[mediaanpos].getPos(dim)  + " dim: " + (dim % 2));
-		
-		int i = start;
-		int j = eind;
-		SpelObject temp;
-
-		while (i <= j) {
-			while (this.boompje[i].getPos(dim) < mediaan) {
-				i++;
-				System.out.println("i + 1: " + i);
-			}
-			while (this.boompje[j].getPos(dim) > mediaan) {
-				j--;
-				System.out.println("j + 1: " + j);
-			}
-			if (i <= j) {
-				temp = this.boompje[i];
-				System.out.println("wissel " + this.boompje[i].toString()
-						+ " en " + this.boompje[j].toString());
-				this.boompje[i] = this.boompje[j];
-				this.boompje[j] = temp;
-				
-				i++;
-				System.out.println("i + 1: " + i);
-				j--;
-				System.out.println("j + 1: " + j);
-				System.out.println(this.toString());
-			}
-		}
-		
-		return i;
-	}
-	*/
-	
-	/*
-	// http://www.algolist.net/Algorithms/Sorting/Quicksort
-	int partition(int arr[], int left, int right)
-	{
-	      int i = left, j = right;
-	      int tmp;
-	      int pivot = arr[(left + right) / 2];
-	     
-	      while (i <= j) {
-	            while (arr[i] < pivot)
-	                  i++;
-	            while (arr[j] > pivot)
-	                  j--;
-	            if (i <= j) {
-	                  tmp = arr[i];
-	                  arr[i] = arr[j];
-	                  arr[j] = tmp;
-	                  i++;
-	                  j--;
-	            }
-	      };
-	     
-	      return i;
-	}
-	 
-	void quickSort(int arr[], int left, int right) {
-	      int index = partition(arr, left, right);
-	      if (left < index - 1)
-	            quickSort(arr, left, index - 1);
-	      if (index < right)
-	            quickSort(arr, index, right);
-	}
-
-	*/
-	
 	public void recQuickSort(int left, int right, int dim) {
 		int size = right - left + 1;
 		if (size <= 3) // manual sort if small
@@ -129,7 +35,7 @@ public class boom {
 			System.out.println("right: \n" + this.toString(partition + 1, right));
 			recQuickSort(left, partition - 1, dim + 1);
 			//System.out.println("right: \n" + this.toString(partition + 1, right));
-			recQuickSort(partition + 1, right, dim + 1);
+			recQuickSort(partition, right, dim + 1);
 		}
 	} // end recQuickSort()
 	
@@ -197,35 +103,6 @@ public class boom {
 		}
 	} // end manualSort()
 	
-	/*
-	private int getMediaanPos(int start, int eind, int dim) {
-		SpelObject obj1 = this.boompje[start];
-		SpelObject obj2 = this.boompje[eind];
-		SpelObject obj3 = this.boompje[(start + eind) / 2];
-		
-		System.out.println(this.toString());
-		System.out.println("optie 1: " + start + " optie 2: " + eind + " optie 3: " + (start + eind) / 2 + " dim: " + (dim % 2));
-
-		System.out.println("optie 1: " + obj1.getPos(dim) + " optie 2: " + obj2.getPos(dim) + " optie 3: " + obj3.getPos(dim) + " dim: " + (dim % 2));
-
-		if (obj1.getPos(dim) == obj2.getPos(dim)
-				|| obj1.getPos(dim) == obj3.getPos(dim)
-				|| obj1.getPos(dim) < obj2.getPos(dim)
-				&& obj1.getPos(dim) > obj3.getPos(dim)
-				|| obj1.getPos(dim) < obj3.getPos(dim)
-				&& obj1.getPos(dim) > obj2.getPos(dim)) {
-			return start;
-		} else if (obj2.getPos(dim) == obj3.getPos(dim)
-				|| obj2.getPos(dim) < obj1.getPos(dim)
-				&& obj2.getPos(dim) > obj3.getPos(dim)
-				|| obj2.getPos(dim) < obj3.getPos(dim)
-				&& obj2.getPos(dim) > obj1.getPos(dim)) {
-			return eind;
-		} else {
-			return (start + eind) / 2;
-		}
-	}
-	*/
 
 	public String toString() {
 
