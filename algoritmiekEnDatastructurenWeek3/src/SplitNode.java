@@ -21,4 +21,24 @@ public class SplitNode extends Node {
 			child.setParent(this);
 		}
 	}
+	
+	public String toString() {
+		String r = "( ";
+		
+		if(this.leftChild == null)
+			r += "null";
+		else
+			r += this.leftChild.toString();
+		
+		r += " , ";
+		
+		if(this.rightChild == null)
+			r += "null";
+		else
+			r += this.rightChild.toString();
+		
+		r += " )";
+		
+		return r;
+	}
 }

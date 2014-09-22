@@ -5,4 +5,14 @@ public class EndNode extends Node {
 		super(ouder);
 		this.spelObject = spelObject;
 	}
+	
+	public String toString() {
+		String r = "( ";
+		
+		r += this.spelObject.toString();
+		
+		r += " )";
+		
+		return r;
+	}
 }
