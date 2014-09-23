@@ -20,5 +20,6 @@ public abstract class Node {
 
 	public abstract void setBounds();
 
-	public abstract void zoek(ArrayList objecten);
+	public abstract void zoek(double x, double y, ArrayList<SpelObject> objecten);
+
 }

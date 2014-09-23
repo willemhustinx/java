@@ -46,9 +46,14 @@ public class EndNode extends Node {
 
 	}
 
-	@Override
-	public void zoek(ArrayList objecten) {
-		// TODO Auto-generated method stub
 
+	@Override
+	public void zoek(double x, double y, ArrayList<SpelObject> objecten) {
+		
+		if(this.spelObject.getPos(0) == x && this.spelObject.getPos(1) == y)
+		{
+			objecten.add(this.spelObject);
+		}
+		
 	}
 }

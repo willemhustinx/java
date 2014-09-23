@@ -1,3 +1,6 @@
+import java.awt.List;
+import java.util.ArrayList;
+
 public class bspBoom {
 	public static void main(String[] args) {
 		new bspBoom();
@@ -26,6 +29,11 @@ public class bspBoom {
 		System.out.println(temp.lowerBound(1));
 		System.out.println(temp.upperBound(0));
 		System.out.println(temp.upperBound(1));
+		
+		ArrayList<SpelObject> object = new ArrayList<SpelObject>();
+		temp.zoek(300.0, 850.0, object);
+		
+		System.out.println(object.toString());
 		
 		System.out.println(boom2.toString());
 	}
