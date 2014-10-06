@@ -1,20 +1,52 @@
+import java.awt.List;
+import java.util.ArrayList;
+import java.util.Random;
+
 public class boom2 {
 
 	private SpelObject[] boompje;
 	private int i = 0;
 
 	boom2() {
-		this.boompje = new SpelObject[8];
-		this.addToBoom(new SpelObject(900, 100));
-		this.addToBoom(new SpelObject(100, 100));
-		this.addToBoom(new SpelObject(950, 50));
-		this.addToBoom(new SpelObject(50, 750));
-		this.addToBoom(new SpelObject(110, 90));
-		this.addToBoom(new SpelObject(60, 800));
-		this.addToBoom(new SpelObject(40, 800));
-		this.addToBoom(new SpelObject(700, 850));
-
+		
 	}
+	
+	public SpelObject[] getArray()
+	{
+		return this.boompje;
+	}
+	
+	public void setArray(SpelObject[] a) {
+		this.boompje = a;
+		
+	}
+	
+	public void fill(int amount)
+	{
+		this.boompje = new SpelObject[amount];
+		
+		Random r = new Random();
+		
+		for(int j = 0; j < amount; j++ )
+		{
+			this.addToBoom(new SpelObject(r.nextDouble() * (Double.MAX_VALUE - 1), r.nextDouble() * (Double.MAX_VALUE - 1)));
+		}
+	}
+	
+	public ArrayList<SpelObject> searchArray(double x, double y)
+    {
+		
+		ArrayList<SpelObject> found = new ArrayList<SpelObject>();
+        for (int i = 0; i < boompje.length; i++)
+        {
+            if (boompje[i].getPos(0) == x && boompje[i].getPos(1) == y)
+            {
+                found.add(boompje[i]);
+            }
+        }
+        return found;
+    }
+	
 
 	public void addToBoom(SpelObject so) {
 		this.boompje[this.i] = so;
@@ -144,4 +176,6 @@ public class boom2 {
 
 		return r;
 	}
+
+
 }

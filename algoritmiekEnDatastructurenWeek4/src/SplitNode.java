@@ -88,15 +88,13 @@ public class SplitNode extends Node {
 
 	}
 
-
-
 	@Override
 	public void zoek(double x, double y, ArrayList<SpelObject> objecten) {
-		if(lowBounds[0] <= x && highBounds[0] >= x && lowBounds[1] <= y && highBounds[1] >=y)
-		{
+		if (lowBounds[0] <= x && highBounds[0] >= x && lowBounds[1] <= y
+				&& highBounds[1] >= y) {
 			this.leftChild.zoek(x, y, objecten);
 			this.rightChild.zoek(x, y, objecten);
 		}
-		
+
 	}
 }
